@@ -1,0 +1,48 @@
+<div class="auth-page">
+  <div class="container page">
+    <div class="row">
+
+      <div class="col-md-6 offset-md-3 col-xs-12">
+        <h1 class="text-xs-center">Login</h1>
+        <p class="text-xs-center">
+          <a [routerLink]="['/register']">Need an account?</a>
+        </p>
+        <!-- <app-list-errors [errors]="errors"></app-list-errors> -->
+        <form [formGroup]="loginForm">
+          <fieldset>
+            <fieldset class="form-group">
+              <input
+                formControlName="username"
+                placeholder="Username"
+                class="form-control form-control-lg"
+                type="text"/>
+                <div class="errors"
+                *ngIf="loginForm.get('username').invalid && (loginForm.get('username').touched || loginForm.get('username').dirty)">
+                <div class="error-messages" *ngIf="loginForm.get('username').hasError('required')">
+                  required *
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="form-group">
+              <input
+                formControlName="password"
+                placeholder="Password"
+                class="form-control form-control-lg"
+                type="password" />
+                <div class="errors"
+                *ngIf="loginForm.get('password').invalid && (loginForm.get('password').touched || loginForm.get('password').dirty)">
+                <div class="error-messages" *ngIf="loginForm.get('password').hasError('required')">
+                  required *
+                </div>
+              </div>
+            </fieldset>
+            <button (click)="login()" class="btn btn-lg btn-primary pull-xs-right" [disabled]="!loginForm.valid" type="submit">
+              Login
+            </button>
+          </fieldset>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

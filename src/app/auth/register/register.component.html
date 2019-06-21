@@ -1,0 +1,72 @@
+<div class="auth-page">
+  <div class="container page">
+    <div class="row">
+
+      <div class="col-md-6 offset-md-3 col-xs-12">
+        <h1 class="text-xs-center">Register</h1>
+        <p class="text-xs-center">
+          <a [routerLink]="['/login']">Have an account?</a>
+        </p>
+        <form [formGroup]="registerForm">
+          <fieldset>
+            <fieldset class="form-group">
+              <input formControlName="username" placeholder="Username" class="form-control form-control-lg"
+                type="text" />
+              <div class="errors"
+                *ngIf="registerForm.get('username').invalid && (registerForm.get('username').touched || registerForm.get('username').dirty)">
+                <div class="error-messages" *ngIf="registerForm.get('username').hasError('required')">
+                  required *
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="form-group">
+              <input formControlName="email" placeholder="Email" class="form-control form-control-lg" type="text" />
+               <div class="errors"
+                *ngIf="registerForm.get('email').invalid && (registerForm.get('email').touched || registerForm.get('email').dirty)">
+                <div class="error-messages" *ngIf="registerForm.get('email').hasError('required')">
+                  required *
+                </div>
+                <div class="error-messages" *ngIf="registerForm.get('email').hasError('email')">
+                  must be an email *
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="form-group">
+              <input formControlName="password" placeholder="Password" class="form-control form-control-lg"
+                type="password" />
+                <div class="errors"
+                *ngIf="registerForm.get('password').invalid && (registerForm.get('password').touched || registerForm.get('password').dirty)">
+                <div class="error-messages" *ngIf="registerForm.get('password').hasError('required')">
+                  required *
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="form-group">
+              <input formControlName="name" placeholder="Name" class="form-control form-control-lg" type="text" />
+              <div class="errors"
+              *ngIf="registerForm.get('name').invalid && (registerForm.get('name').touched || registerForm.get('name').dirty)">
+              <div class="error-messages" *ngIf="registerForm.get('name').hasError('required')">
+                required *
+              </div>
+            </div>
+            </fieldset>
+            <fieldset class="form-group">
+              <input formControlName="phone" placeholder="Phone" class="form-control form-control-lg" type="text" />
+              <div class="errors"
+              *ngIf="registerForm.get('phone').invalid && (registerForm.get('phone').touched || registerForm.get('phone').dirty)">
+              <div class="error-messages" *ngIf="registerForm.get('phone').hasError('required')">
+                required *
+              </div>
+            </div>
+            </fieldset>
+            <button (click)="submit()" class="btn btn-lg btn-primary pull-xs-right" [disabled]="!registerForm.valid"
+              type="submit">
+              Submit
+            </button>
+          </fieldset>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
