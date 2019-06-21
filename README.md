@@ -1,5 +1,21 @@
+## How to run
+Clone this repo, then cd to project.
+First, you must be run server: `$ npm run start:server` .
+Using development mode to serve UI: `$ ng s` .
+To build: `$ npm run prod` .
+To build product for Angular Universal: `$ npm run build:ssr`, then `$ npm run serve:ssr` to display on localhost.
 
+### In this Project
+#### FE
+* Using Angular 7, Webpack 4 and coding Typescript.
+* Organize the structure as real world project.
+* Add Angular Universal and config to run friendly for SEO.
+#### BE
+* Using MongoDB, NodeJS, ExpressJS framework and coding Typescript.
+* Using jwt to handle Access Token in middlewares
+* MVC structure for API layers.
 
+---
 ![](README/talk-is-cheap-show-me-the-code.jpg)
 
 ## Project Overview
